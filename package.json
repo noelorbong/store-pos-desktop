@@ -1,0 +1,54 @@
+{
+    "name": "store-pos-cashier",
+    "version": "0.1.2",
+    "private": true,
+    "author": "Store POS",
+    "description": "Offline-first desktop cashier for Store POS",
+    "main": "main.cjs",
+    "scripts": {
+        "dev": "electron .",
+        "build": "node scripts/build-windows.cjs",
+        "build:mac": "electron-builder --mac",
+        "build:legacy": "node scripts/build-legacy.cjs"
+    },
+    "devDependencies": {
+        "electron": "^37.2.6",
+        "electron-builder": "^26.0.12"
+    },
+    "build": {
+        "appId": "com.storepos.cashier",
+        "productName": "Store POS Cashier",
+        "files": [
+            "main.cjs",
+            "preload.cjs",
+            "database.cjs",
+            "renderer/**/*",
+            "package.json"
+        ],
+        "extraResources": [
+            {
+                "from": "../public/image/logo.ico",
+                "to": "logo.ico"
+            },
+            {
+                "from": "../public/image/logo.png",
+                "to": "logo.png"
+            }
+        ],
+        "directories": {
+            "output": "dist"
+        },
+        "mac": {
+            "target": ["dmg", "zip"],
+            "icon": "../public/image/logo.png"
+        },
+        "win": {
+            "target": "nsis",
+            "icon": "../public/image/logo.ico"
+        },
+        "nsis": {
+            "installerIcon": "../public/image/logo.ico",
+            "uninstallerIcon": "../public/image/logo.ico"
+        }
+    }
+}
