@@ -30,7 +30,7 @@ jobs:
       - name: Upload installers
   	uses: actions/upload-artifact@v4
   	with:
-    		name: Store-POS-macOS
-    		path: desktop/dist/*.dmg
-    		if-no-files-found: error
-    		retention-days: 14
+    	 name: Store-POS-macOS
+    	 path: desktop/dist/*.dmg
+    	 if-no-files-found: error
+    	 retention-days: 14
