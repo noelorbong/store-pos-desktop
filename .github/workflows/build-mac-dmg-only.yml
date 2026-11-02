@@ -1,4 +1,4 @@
-name: Build Store POS Cashier for macOS
+name: Build Store POS Cashier for macOS DMG
 
 on:
   workflow_dispatch:
