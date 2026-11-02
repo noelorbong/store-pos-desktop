@@ -1,0 +1,1 @@
+import{t as e}from"./TableDetails-C9HmQSzJ.js";export{e as default};

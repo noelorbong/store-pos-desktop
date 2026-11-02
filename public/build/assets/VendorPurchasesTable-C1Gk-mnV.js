@@ -1,0 +1,1 @@
+import{t as e}from"./VendorPurchasesTable-Cog6VKmd.js";export{e as default};

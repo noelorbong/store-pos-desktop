@@ -1,0 +1,12 @@
+{
+    "name": "store-pos-cashier-legacy",
+    "version": "0.1.2",
+    "private": true,
+    "author": "Store POS",
+    "description": "Store POS Cashier for Windows 8.1",
+    "main": "legacy-main.cjs",
+    "dependencies": {
+        "better-sqlite3": "8.7.0",
+        "node-fetch": "2.7.0"
+    }
+}

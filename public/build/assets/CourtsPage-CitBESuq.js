@@ -1,0 +1,1 @@
+import{D as e,c as t,x as n}from"./runtime-core.esm-bundler-WGAHmYzY.js";import r from"./Index-MjOZBUIL.js";var i={__name:`CourtsPage`,props:{date:String,bookingView:String,courts:Array,bookings:Object,openPlays:Array,openPlayGroups:Array,stats:Object,pickleSetting:Object},setup(i){return(i,a)=>(e(),t(r,n(i.$props,{"initial-tab":`courts`}),null,16))}};export{i as default};

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Store POS</title>
+    <style>
+        :root { color-scheme: light; font-family: Georgia, 'Times New Roman', serif; }
+        * { box-sizing: border-box; }
+        body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px; color: #17332b; background: radial-gradient(circle at top left, #dff7e9, transparent 38%), linear-gradient(135deg, #f8faf7, #eef5ef); }
+        main { width: min(560px, 100%); border: 1px solid #b9d8c6; border-radius: 24px; background: rgba(255,255,255,.94); padding: 32px; box-shadow: 0 24px 70px rgba(20, 60, 45, .16); }
+        .eyebrow { margin: 0; color: #078553; font: 700 12px/1.2 sans-serif; letter-spacing: .18em; text-transform: uppercase; }
+        h1 { margin: 10px 0 8px; font-size: clamp(28px, 5vw, 42px); }
+        .copy { margin: 0 0 24px; color: #60736b; font: 14px/1.6 sans-serif; }
+        label { display: block; margin-bottom: 7px; font: 700 13px/1.2 sans-serif; }
+        input { width: 100%; border: 1px solid #adc9b9; border-radius: 12px; padding: 13px 14px; font: 15px/1.2 sans-serif; outline: none; }
+        input:focus { border-color: #07955d; box-shadow: 0 0 0 4px #d8f4e5; }
+        button { width: 100%; margin-top: 12px; border: 0; border-radius: 12px; padding: 13px 16px; color: white; background: #078553; font: 700 14px/1.2 sans-serif; cursor: pointer; }
+        button:hover { background: #056f46; }
+        button:disabled { cursor: wait; opacity: .65; }
+        .hint { margin: 10px 0 0; color: #718078; font: 12px/1.5 sans-serif; }
+        .error { min-height: 20px; margin: 10px 0 0; color: #c62e3b; font: 700 12px/1.4 sans-serif; }
+    </style>
+</head>
+<body>
+    <main>
+        <p class="eyebrow">Store POS Desktop</p>
+        <h1>Server not reached</h1>
+        <p class="copy">Check that the Store POS system is running, then correct the IP address or domain below.</p>
+        <form id="connection-form">
+            <label for="server-url">POS Server IP or Domain</label>
+            <input id="server-url" type="text" required autofocus placeholder="192.168.1.20:8000 or pos.example.com">
+            <button id="connect-button" type="submit">Save and Reconnect</button>
+            <p class="hint">Local IP addresses use HTTP by default. For a domain, include http:// if it does not support HTTPS.</p>
+            <p id="connection-error" class="error" role="alert"></p>
+        </form>
+    </main>
+    <script src="./connection.js"></script>
+</body>
+</html>

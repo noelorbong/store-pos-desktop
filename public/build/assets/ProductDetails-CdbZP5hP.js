@@ -1,0 +1,1 @@
+import{t as e}from"./ProductDetails-xtQLxvKq.js";export{e as default};

@@ -1,0 +1,1 @@
+function e(e){let t=e=>Number(e??0).toLocaleString(`en-US`,{minimumFractionDigits:2,maximumFractionDigits:2});return e.rate_unit===`base_hours`?`₱${t(e.rate)} for first ${e.included_hours} hours + ₱${t(e.extra_hour_rate)}/extra hour (rounded up)`:`₱${t(e.rate)} / ${e.rate_unit===`day`?`24 hours`:e.rate_unit}`}export{e as t};
