@@ -1,0 +1,36 @@
+name: Build Store POS Cashier for macOS
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-mac:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        working-directory: desktop
+        run: npm ci
+
+      - name: Build macOS application
+  	working-directory: desktop
+  	run: npx electron-builder --mac dmg --x64 --arm64 --publish never
+
+      - name: Upload installers
+  	uses: actions/upload-artifact@v4
+  	with:
+    		name: Store-POS-macOS
+    		path: desktop/dist/*.dmg
+    		if-no-files-found: error
+    		retention-days: 14
